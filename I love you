@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Olu ❤️</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .letter {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .open-button {
+            padding: 12px 25px;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .open-button:hover { background-color: #e03e5c; }
+
+        .heart {
+            position: absolute;
+            color: #ff4d6d;
+            font-size: 24px;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="https://www.example.com/cinnamon-girl.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+    <div class="container">
+        <button class="open-button" onclick="openLetter()">Open Your Letter ✉️</button>
+        <div class="letter" id="letter">
+            <h1>Babeee ❤️</h1>
+            <p>I just want to tell you I’m sorry for what happened yesterday and I love you so so much. 💕</p>
+            <p>Good morning and have a great day! ☀️🥰</p>
+            <p>From your stubborn cute lil princess 😘</p>
+            <img src="https://i.imgur.com/D3xS6aV.png" alt="Pink Teddy Bear" width="100">
+            <br>
+            <button class="open-button" onclick="alert('Aww I forgive you, my love! 😘❤️')">I Forgive You</button>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById("letter").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
